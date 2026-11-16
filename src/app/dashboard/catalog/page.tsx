@@ -84,7 +84,7 @@ export default function CatalogPage() {
           placeholder="Nueva categoría"
           className="border rounded px-3 py-2 flex-1"
         />
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <button type="submit" className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors">
           Agregar
         </button>
       </form>
@@ -113,7 +113,7 @@ export default function CatalogPage() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleToggle(prod.id)}
-                    className={`text-sm px-3 py-1 rounded ${prod.isAvailable ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}
+                    className={`text-sm px-3 py-1 rounded-lg ${prod.isAvailable ? 'bg-accent/10 text-accent' : 'bg-gray-100 text-text-muted'}`}
                   >
                     {prod.isAvailable ? 'Disponible' : 'No disponible'}
                   </button>
@@ -146,7 +146,7 @@ export default function CatalogPage() {
               placeholder="Precio"
               className="border rounded px-2 py-1 w-24 text-sm"
             />
-            <button type="submit" className="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700">
+            <button type="submit" className="bg-accent text-white px-3 py-1 rounded-lg text-sm hover:bg-accent-dark transition-colors">
               +
             </button>
           </form>

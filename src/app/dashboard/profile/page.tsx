@@ -83,7 +83,7 @@ export default function ProfilePage() {
           <label className="block text-sm font-medium mb-1">URL QR Municipal</label>
           <input value={form.municipalQrUrl} onChange={(e) => setForm({ ...form, municipalQrUrl: e.target.value })} className="w-full border rounded px-3 py-2" />
         </div>
-        <button type="submit" disabled={saving} className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 disabled:opacity-50">
+        <button type="submit" disabled={saving} className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark disabled:opacity-50 transition-colors">
           {saving ? 'Guardando...' : 'Guardar'}
         </button>
       </form>

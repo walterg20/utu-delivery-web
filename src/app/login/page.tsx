@@ -29,7 +29,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-6 text-center">Utu Delivery</h1>
+        <h1 className="text-2xl font-bold mb-6 text-center text-primary">Utu Delivery</h1>
         <h2 className="text-lg mb-4 text-center text-gray-600">Iniciar sesión</h2>
         {error && <p className="text-red-500 mb-4 text-sm">{error}</p>}
         <div className="mb-4">
@@ -55,7 +55,7 @@ export default function LoginPage() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 disabled:opacity-50"
+          className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary-dark disabled:opacity-50 transition-colors"
         >
           {loading ? 'Ingresando...' : 'Ingresar'}
         </button>

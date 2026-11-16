@@ -32,15 +32,15 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm border-b">
+      <nav className="bg-primary-dark shadow-sm border-b">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-          <span className="font-bold text-lg">Utu Delivery</span>
+          <span className="font-bold text-lg text-white">Utu Delivery</span>
           <div className="flex gap-4">
-            <Link href="/dashboard/profile" className="text-blue-600 hover:underline">Perfil</Link>
-            <Link href="/dashboard/catalog" className="text-blue-600 hover:underline">Catálogo</Link>
+            <Link href="/dashboard/profile" className="text-white/80 hover:text-white">Perfil</Link>
+            <Link href="/dashboard/catalog" className="text-white/80 hover:text-white">Catálogo</Link>
             <button
               onClick={() => { localStorage.removeItem('token'); router.push('/login'); }}
-              className="text-red-500 hover:underline"
+              className="text-white/70 hover:text-white"
             >
               Salir
             </button>

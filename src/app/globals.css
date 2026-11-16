@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand Colors */
+  --color-primary: #1E2671;
+  --color-primary-dark: #0F143A;
+  --color-primary-light: #161B46;
+  --color-accent: #128842;
+  --color-accent-light: #ECFDF5;
+  --color-accent-dark: #065F46;
+
+  /* Surface */
+  --color-surface: #F8FAFC;
+  --color-surface-card: #FFFFFF;
+  --color-surface-card-alt: #F1F5F9;
+  --color-surface-dark-header: #0F143A;
+  --color-surface-dark-card: #161B46;
+  --color-border-subtle: #E2E8F0;
+  --color-border-brand: #1E2671;
+
+  /* Text */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+  --color-text-on-accent: #FFFFFF;
+
+  /* State */
+  --color-success: #128842;
+  --color-success-bg: #ECFDF5;
+  --color-success-text: #065F46;
+  --color-warning: #F59E0B;
+  --color-warning-bg: #FFFBEB;
+  --color-warning-text: #92400E;
+  --color-danger: #EF4444;
+  --color-danger-bg: #FEF2F2;
+  --color-danger-text: #991B1B;
+  --color-info: #3B82F6;
+  --color-info-bg: #EFF6FF;
+  --color-info-text: #1E40AF;
+
+  /* Fintech */
+  --color-fintech-cyan: #00D2D3;
+  --color-cashback-emerald: #10B981;
+
+  /* Order States */
+  --color-state-created: #F59E0B;
+  --color-state-preparing: #3B82F6;
+  --color-state-dispatched: #8B5CF6;
+  --color-state-cancelled: #EF4444;
+
+  /* Typography */
+  --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: var(--font-space-grotesk), 'Space Grotesk', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-brand: 0 10px 25px -5px rgba(30, 38, 113, 0.25);
+  --shadow-accent: 0 10px 25px -5px rgba(18, 136, 66, 0.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+/* Monospace for financial/telemetry */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Tabular nums for financial amounts */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
