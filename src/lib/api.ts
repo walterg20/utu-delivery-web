@@ -92,3 +92,12 @@ export const wallets = {
       body: JSON.stringify({ amount }),
     }),
 };
+
+export const payments = {
+  createPreference: (orderId: string) =>
+    apiFetch<any>('/payments/preference', {
+      method: 'POST',
+      body: JSON.stringify({ orderId }),
+    }),
+  get: (orderId: string) => apiFetch<any>(`/payments/${orderId}`),
+};
