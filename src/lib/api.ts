@@ -70,3 +70,25 @@ export const products = {
   toggle: (id: string) =>
     apiFetch<any>(`/products/${id}/toggle`, { method: 'PATCH' }),
 };
+
+export const orders = {
+  list: () => apiFetch<any[]>('/orders'),
+  get: (id: string) => apiFetch<any>(`/orders/${id}`),
+  create: (data: any) =>
+    apiFetch<any>('/orders', { method: 'POST', body: JSON.stringify(data) }),
+  updateStatus: (id: string, status: string, riderId?: string) =>
+    apiFetch<any>(`/orders/${id}/status`, {
+      method: 'PATCH',
+      body: JSON.stringify({ status, riderId }),
+    }),
+};
+
+export const wallets = {
+  me: () => apiFetch<any>('/wallets/me'),
+  transactions: () => apiFetch<any[]>('/wallets/me/transactions'),
+  topup: (amount: number) =>
+    apiFetch<any>('/wallets/me/topup', {
+      method: 'POST',
+      body: JSON.stringify({ amount }),
+    }),
+};
